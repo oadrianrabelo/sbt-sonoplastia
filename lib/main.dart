@@ -13,21 +13,26 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-
         primarySwatch: Colors.deepPurple,
       ),
       home: Scaffold(
-        body: ListView(),
+        body: Center(
+          child: ListView(
+            children: [
+              Card(
+                child: ElevatedButton(
+                  onPressed: () {},
+                  child: Text('Tocar'),
+                ),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           title: const Text('SBT SONOPLASTIA'),
           backgroundColor: const Color.fromARGB(255, 39, 1, 83),
         ),
-      )
-      );
+      ),
+    );
   }
 }
-
-
-
-
-
