@@ -38,11 +38,12 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future setAudio() async {
-    // repeat when completed
+    // String url = 'https://www.applesaucekids.com/sound%20effects/moo.mp3';
+    // audioPlayer.setUrl(url);
 
-    final player = AudioCache(prefix: 'assets/audio/');
-    final url = await player.load('moo.mp3');
     // load from asset
+    final player = AudioCache(prefix: 'assets/audio/');
+    final url = await player.load('eminem.mp3');
     audioPlayer.setUrl(url.path, isLocal: true);
   }
   @override
