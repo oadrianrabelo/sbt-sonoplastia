@@ -1,7 +1,7 @@
 # SBT Sonoplastia
 
 Uma aplicação criada para a reprodução de sons comuns de 
-se ouvir ao assistir os programas do SBT.\
+se ouvir ao assistir os programas do SBT.
 
 Construído para estudar o Framework Flutter.
 
