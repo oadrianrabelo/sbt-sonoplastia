@@ -43,13 +43,13 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future setAudio() async {
-    audioPlayer.setReleaseMode(ReleaseMode.RELEASE);
+    audioPlayer.setReleaseMode(ReleaseMode.STOP);
     // String url = 'https://www.applesaucekids.com/sound%20effects/moo.mp3';
     // audioPlayer.setUrl(url);
 
     // load from asset
     final player = AudioCache(prefix: 'assets/audio/');
-    final url = await player.load('eminem.mp3');
+    final url = await player.load('ui-rodrigo-faro.mp3');
     audioPlayer.setUrl(url.path, isLocal: true);
   }
   @override
@@ -61,7 +61,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SBT Sonoplastia',
       theme: ThemeData(
         primarySwatch: Colors.deepPurple,
       ),
@@ -81,7 +81,6 @@ class _MyAppState extends State<MyApp> {
                         iconSize: 50,
                           onPressed: () async {
                             if (isPlaying) {
-                              debugPrint('Pausou');
                               await audioPlayer.pause();
                             } else {
                               await audioPlayer.resume();
