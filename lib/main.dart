@@ -23,6 +23,11 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     setAudio();
 
+    audioPlayer.onPlayerStateChanged.listen((state) {
+      setState(() {
+        isPlaying = state == PlayerState.PLAYING;
+      });
+    });
     audioPlayer.onDurationChanged.listen((newDuration) {
       setState(() {
         duration = newDuration;
@@ -38,6 +43,7 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future setAudio() async {
+    audioPlayer.setReleaseMode(ReleaseMode.RELEASE);
     // String url = 'https://www.applesaucekids.com/sound%20effects/moo.mp3';
     // audioPlayer.setUrl(url);
 
@@ -49,7 +55,6 @@ class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
     audioPlayer.dispose();
-
     super.dispose();
   }
 
@@ -76,6 +81,7 @@ class _MyAppState extends State<MyApp> {
                         iconSize: 50,
                           onPressed: () async {
                             if (isPlaying) {
+                              debugPrint('Pausou');
                               await audioPlayer.pause();
                             } else {
                               await audioPlayer.resume();
