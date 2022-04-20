@@ -61,25 +61,28 @@ class _CardSomState extends State<CardSom> {
       elevation: 5,
       child: Column(
         children: [
-          CircleAvatar(
-            radius: 35,
-            child: IconButton(
-              icon: Icon(
-                isPlaying ? Icons.pause : Icons.play_arrow,
+          Padding(
+            padding: const EdgeInsets.only(top: 8.0),
+            child: CircleAvatar(
+              radius: 35,
+              child: IconButton(
+                icon: Icon(
+                  isPlaying ? Icons.pause : Icons.play_arrow,
+                ),
+                iconSize: 50,
+                onPressed: () async {
+                  if (isPlaying) {
+                    await audioPlayer.pause();
+                  } else {
+                    await audioPlayer.resume();
+                  }
+                },
               ),
-              iconSize: 50,
-              onPressed: () async {
-                if (isPlaying) {
-                  await audioPlayer.pause();
-                } else {
-                  await audioPlayer.resume();
-                }
-              },
             ),
           ),
           Container(
             margin: const EdgeInsets.only(top: 20),
-            child: Text (
+            child: Text(
               widget.name,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
@@ -102,9 +105,12 @@ class _CardSomState extends State<CardSom> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Text(formatTime(position)),
+                Text(
+                  formatTime(position),
+                  style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                ),
                 // Text(formatTime(duration - position)),
-                Text(formatTime(duration - position)),
+                // Text(formatTime(duration - position)),
               ],
             ),
           ),

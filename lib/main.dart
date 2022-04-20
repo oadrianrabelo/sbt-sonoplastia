@@ -68,7 +68,11 @@ class _MyAppState extends State<MyApp> {
       ),
       home: Scaffold(
         body: Center(
-          child: ListView(
+          child: GridView(
+            physics: const BouncingScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+            ),
             children: const [
               CardSom(
                 url: 'ui-rodrigo-faro.mp3',
@@ -77,6 +81,10 @@ class _MyAppState extends State<MyApp> {
               CardSom(
                 url: 'moo.mp3',
                 name: 'MOO',
+              ),
+              CardSom(
+                url: 'eminem.mp3',
+                name: 'eminem',
               ),
             ],
           ),
