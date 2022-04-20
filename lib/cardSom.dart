@@ -58,6 +58,7 @@ class _CardSomState extends State<CardSom> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 5,
       child: Column(
         children: [
           CircleAvatar(
@@ -77,10 +78,10 @@ class _CardSomState extends State<CardSom> {
             ),
           ),
           Container(
-            margin: EdgeInsets.only(top: 20),
+            margin: const EdgeInsets.only(top: 20),
             child: Text (
               widget.name,
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
           Slider(
