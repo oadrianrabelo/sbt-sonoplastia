@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:sbt_sonoplastia/cardSom.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,7 +40,6 @@ class _MyAppState extends State<MyApp> {
         position = newPosition;
       });
     });
-
   }
 
   Future setAudio() async {
@@ -52,6 +52,7 @@ class _MyAppState extends State<MyApp> {
     final url = await player.load('ui-rodrigo-faro.mp3');
     audioPlayer.setUrl(url.path, isLocal: true);
   }
+
   @override
   void dispose() {
     audioPlayer.dispose();
@@ -68,51 +69,14 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
         body: Center(
           child: ListView(
-            children: [
-              Card(
-                child: Column(
-                  children: [
-                    CircleAvatar(
-                      radius: 35,
-                      child: IconButton(
-                        icon: Icon(
-                          isPlaying ? Icons.pause : Icons.play_arrow,
-                        ),
-                        iconSize: 50,
-                          onPressed: () async {
-                            if (isPlaying) {
-                              await audioPlayer.pause();
-                            } else {
-                              await audioPlayer.resume();
-                            }
-                          },
-                      ),
-
-                    ),
-                    Slider(
-                      min: 0,
-                      max: duration.inSeconds.toDouble(),
-                      value: position.inSeconds.toDouble(),
-                      onChanged: (value) async {
-                        final position = Duration(seconds: value.toInt());
-
-                        await audioPlayer.seek(position);
-
-                        await audioPlayer.resume();
-                      },
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(formatTime(position)),
-                          Text(formatTime(duration - position)),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+            children: const [
+              CardSom(
+                url: 'ui-rodrigo-faro.mp3',
+                name: 'UUUUUUUUI!',
+              ),
+              CardSom(
+                url: 'moo.mp3',
+                name: 'MOO',
               ),
             ],
           ),
@@ -124,16 +88,4 @@ class _MyAppState extends State<MyApp> {
       ),
     );
   }
-}
-
-String formatTime(Duration duration) {
-  String twoDigits(int n) => n.toString().padLeft(2, '0');
-  final hours = twoDigits(duration.inHours);
-  final minutes = twoDigits(duration.inMinutes.remainder(60));
-  final seconds = twoDigits(duration.inSeconds.remainder(60));
-  return [
-    if (duration.inHours > 0) hours,
-    minutes,
-    seconds,
-  ].join(':');
 }
