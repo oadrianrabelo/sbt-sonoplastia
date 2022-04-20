@@ -71,6 +71,7 @@ class _MyAppState extends State<MyApp> {
           child: GridView(
             physics: const BouncingScrollPhysics(),
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              mainAxisSpacing: 1,
               crossAxisCount: 2,
             ),
             children: const [

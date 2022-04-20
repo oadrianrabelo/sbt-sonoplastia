@@ -58,18 +58,19 @@ class _CardSomState extends State<CardSom> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(120)),
       elevation: 5,
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 8.0),
             child: CircleAvatar(
-              radius: 35,
+              radius: 25,
               child: IconButton(
                 icon: Icon(
                   isPlaying ? Icons.pause : Icons.play_arrow,
                 ),
-                iconSize: 50,
+                iconSize: 35,
                 onPressed: () async {
                   if (isPlaying) {
                     await audioPlayer.pause();
