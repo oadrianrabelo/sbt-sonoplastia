@@ -84,24 +84,26 @@ class _CardSomState extends State<CardSom> {
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          Slider(
-            min: 0,
-            max: duration.inSeconds.toDouble(),
-            value: position.inSeconds.toDouble(),
-            onChanged: (value) async {
-              final position = Duration(seconds: value.toInt());
-
-              await audioPlayer.seek(position);
-
-              await audioPlayer.resume();
-            },
-          ),
+          // Slider(
+          //   min: 0,
+          //   max: duration.inSeconds.toDouble(),
+          //   value: position.inSeconds.toDouble(),
+          //   onChanged: (value) async {
+          //     final position = Duration(seconds: value.toInt());
+          //
+          //     await audioPlayer.seek(position);
+          //
+          //     await audioPlayer.resume();
+          //   },
+          // ),
+          //
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(formatTime(position)),
+                // Text(formatTime(position)),
+                // Text(formatTime(duration - position)),
                 Text(formatTime(duration - position)),
               ],
             ),
