@@ -8,6 +8,7 @@ void main() {
 class SbtSonoplastia extends StatelessWidget {
   const SbtSonoplastia({Key? key}) : super(key: key);
 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SBT Sonoplastia',
