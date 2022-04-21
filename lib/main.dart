@@ -1,65 +1,13 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import 'package:sbt_sonoplastia/cardSom.dart';
+import 'package:sbt_sonoplastia/Sons.dart';
 
 void main() {
   runApp(const SbtSonoplastia());
 }
 
-class SbtSonoplastia extends StatefulWidget {
+class SbtSonoplastia extends StatelessWidget {
   const SbtSonoplastia({Key? key}) : super(key: key);
 
-  @override
-  State<SbtSonoplastia> createState() => _SbtSonoplastiaState();
-}
-
-class _SbtSonoplastiaState extends State<SbtSonoplastia> {
-  final audioPlayer = AudioPlayer();
-  bool isPlaying = false;
-  Duration duration = Duration.zero;
-  Duration position = Duration.zero;
-
-  @override
-  void initState() {
-    super.initState();
-    setAudio();
-
-    audioPlayer.onPlayerStateChanged.listen((state) {
-      setState(() {
-        isPlaying = state == PlayerState.PLAYING;
-      });
-    });
-    audioPlayer.onDurationChanged.listen((newDuration) {
-      setState(() {
-        duration = newDuration;
-      });
-    });
-
-    audioPlayer.onAudioPositionChanged.listen((newPosition) {
-      setState(() {
-        position = newPosition;
-      });
-    });
-  }
-
-  Future setAudio() async {
-    audioPlayer.setReleaseMode(ReleaseMode.STOP);
-    // String url = 'https://www.applesaucekids.com/sound%20effects/moo.mp3';
-    // audioPlayer.setUrl(url);
-
-    // load from asset
-    final player = AudioCache(prefix: 'assets/audio/');
-    final url = await player.load('ui-rodrigo-faro.mp3');
-    audioPlayer.setUrl(url.path, isLocal: true);
-  }
-
-  @override
-  void dispose() {
-    audioPlayer.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'SBT Sonoplastia',
@@ -67,21 +15,8 @@ class _SbtSonoplastiaState extends State<SbtSonoplastia> {
         primarySwatch: Colors.deepPurple,
       ),
       home: Scaffold(
-        body: Center(
-          child: GridView(
-            physics: const BouncingScrollPhysics(),
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              mainAxisSpacing: 1,
-              crossAxisCount: 2,
-            ),
-            children: const [
-              CardSom(
-                url: 'ui-rodrigo-faro.mp3',
-                name: 'UUUUUUUUI!',
-                isAsset: true,
-              ),
-            ],
-          ),
+        body: const Center(
+          child: Sons(),
         ),
         appBar: AppBar(
           title: const Text('SBT SONOPLASTIA'),
