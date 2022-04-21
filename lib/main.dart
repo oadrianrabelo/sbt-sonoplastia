@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import 'package:sbt_sonoplastia/cardSom.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const SbtSonoplastia());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class SbtSonoplastia extends StatefulWidget {
+  const SbtSonoplastia({Key? key}) : super(key: key);
 
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<SbtSonoplastia> createState() => _SbtSonoplastiaState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _SbtSonoplastiaState extends State<SbtSonoplastia> {
   final audioPlayer = AudioPlayer();
   bool isPlaying = false;
   Duration duration = Duration.zero;
