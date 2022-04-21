@@ -101,7 +101,8 @@ class _CardSomState extends State<CardSom> {
             margin: const EdgeInsets.only(top: 20),
             child: Text(
               widget.name,
-              style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
           ),
           Padding(
