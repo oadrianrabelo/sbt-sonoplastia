@@ -46,8 +46,9 @@ class _CardSomState extends State<CardSom> {
 
   Future setAudio() async {
     audioPlayer.setReleaseMode(ReleaseMode.STOP);
+    // load from URL
     // String url = 'https://www.applesaucekids.com/sound%20effects/moo.mp3';
-    // audioPlayer.setUrl(url);
+    // audioPlayer.setUrl(widget.url);
 
     // load from asset
     final player = AudioCache(prefix: 'assets/audio/');
