@@ -53,7 +53,6 @@ git clone git@github.com:Adrian-Rabelo/sbt-sonoplastia.git
   :heavy_check_mark: [Rojão](https://youtu.be/Er4UwN1MiMM)
   :heavy_check_mark: [Som intendível](https://youtu.be/zBh0stt0ayI?t=15)
   :heavy_check_mark: [To be continued](https://youtu.be/403tAdvkSTA)
-  :heavy_check_mark: [Tokyo Drift](https://youtu.be/98SEoSfH9sI)
   :heavy_check_mark: [Tome](https://youtu.be/zBh0stt0ayI)
   :heavy_check_mark: [Uepa](https://youtu.be/gQm8hyMfz2o)
   :heavy_check_mark: [UI](https://youtu.be/gwonaUXRW-w)
