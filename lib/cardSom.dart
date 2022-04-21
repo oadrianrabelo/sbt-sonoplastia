@@ -6,7 +6,7 @@ class CardSom extends StatefulWidget {
   final String name;
   final bool isAsset;
 
-  CardSom({
+  const CardSom({
     Key? key,
     required this.name,
     required this.url,
@@ -26,7 +26,7 @@ class _CardSomState extends State<CardSom> {
   @override
   void initState() {
     super.initState();
-    setAudio();
+    // setAudio();
 
     audioPlayer.onPlayerStateChanged.listen((state) {
       setState(() {
@@ -46,20 +46,30 @@ class _CardSomState extends State<CardSom> {
     });
   }
 
-  Future setAudio() async {
-    audioPlayer.setReleaseMode(ReleaseMode.STOP);
-    if (widget.isAsset) {
-      // load from asset
-      final player = AudioCache(prefix: 'assets/audio/');
-      final url = await player.load(widget.url);
-      audioPlayer.setUrl(url.path, isLocal: true);
-
-    } else {
-      // load from URL
-      audioPlayer.setUrl(widget.url);
-    }
-
+  void playSound() {
+    AudioCache audioCache;
+    audioCache = AudioCache(fixedPlayer: audioPlayer, prefix: 'assets/audio/');
+    audioCache.play(widget.url);
   }
+
+  void stopSound() {
+    audioPlayer.stop();
+  }
+  // store method for future usage -> for example an audio player
+  // Future setAudio() async {
+  //   audioPlayer.setReleaseMode(ReleaseMode.RELEASE);
+  //   if (widget.isAsset) {
+  //     // load from asset
+  //     final player = AudioCache(prefix: 'assets/audio/');
+  //     final url = await player.load(widget.url);
+  //     audioPlayer.setUrl(url.path, isLocal: true);
+  //
+  //   } else {
+  //     // load from URL
+  //     audioPlayer.setUrl(widget.url);
+  //   }
+  //
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -74,16 +84,15 @@ class _CardSomState extends State<CardSom> {
             child: CircleAvatar(
               radius: 25,
               child: IconButton(
-                icon: Icon(
-                  isPlaying ? Icons.pause : Icons.play_arrow,
+                icon: const Icon(
+                  Icons.play_arrow,
                 ),
                 iconSize: 35,
-                onPressed: () async {
+                onPressed: () {
                   if (isPlaying) {
-                    await audioPlayer.pause();
-                  } else {
-                    await audioPlayer.resume();
+                    stopSound();
                   }
+                  playSound();
                 },
               ),
             ),
