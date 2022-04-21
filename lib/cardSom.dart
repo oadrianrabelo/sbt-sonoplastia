@@ -6,11 +6,11 @@ class CardSom extends StatefulWidget {
   final String name;
   final bool isAsset;
 
-  const CardSom({
+  CardSom({
     Key? key,
     required this.name,
     required this.url,
-    required this.isAsset,
+    this.isAsset = true,
   }) : super(key: key);
 
   @override
