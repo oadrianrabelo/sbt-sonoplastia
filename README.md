@@ -21,3 +21,7 @@ git clone git@github.com:Adrian-Rabelo/sbt-sonoplastia.git
 ```
 
 ---
+<details>
+    <summary> Sons presentes </summary>
+    - [x] ![Ai que diliça](https://www.youtube.com/watch?v=jSsSM8a4afk)
+</details>
