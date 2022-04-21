@@ -62,6 +62,4 @@ git clone git@github.com:Adrian-Rabelo/sbt-sonoplastia.git
   :heavy_check_mark: [XIIII](https://youtu.be/BNZKEYsisTo)
   ~~:heavy_check_mark: [Yamete](https://youtu.be/HFLVce6h_xY)~~
 
-
-
 </details>
