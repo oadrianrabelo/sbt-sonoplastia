@@ -30,10 +30,37 @@ class Sons extends StatelessWidget {
           name: 'VIIIXE',
         ),
         CardSom(
-          name: 'Ai ki diliça',
           url: 'ai-que-delicia.mp3',
+          name: 'Ai ki diliça',
         ),
-        
+        CardSom(
+          url: 'pare.mp3',
+          name: 'PARE',
+        ),
+        CardSom(
+            url: 'tome.mp3',
+            name: 'tome',
+        ),
+        CardSom(
+            url: 'atumalaca.mp3',
+            name: 'Atumalaca',
+        ),
+        CardSom(
+            url: 'bem-te-vi.mp3',
+            name: 'Bem te vi',
+        ),
+        CardSom(
+            url: 'cala-boca.mp3',
+            name: 'CALA BOCA',
+        ),
+        CardSom(
+            url: 'jukera.mp3',
+            name: 'TAPORRA',
+        ),
+        CardSom(
+            url: 'tavares.mp3',
+            name: 'Eai',
+        ),
       ],
     );
   }
