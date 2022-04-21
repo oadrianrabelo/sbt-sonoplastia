@@ -12,17 +12,28 @@ class Sons extends StatelessWidget {
         mainAxisSpacing: 1,
         crossAxisCount: 2,
       ),
-      children: const [
+      children: [
         CardSom(
           url: 'ui-rodrigo-faro.mp3',
           name: 'UUUUUUUUI!',
-          isAsset: true,
         ),
         CardSom(
-          url: 'bob-esponja.mp3',
-          name: 'bob esponja',
-          isAsset: true,
+          url: 'xii.mp3',
+          name: 'XIIIIIII',
         ),
+        CardSom(
+          url: 'rapaz.mp3',
+          name: 'RAPAAAZ',
+        ),
+        CardSom(
+          url: 'vixe.mp3',
+          name: 'VIIIXE',
+        ),
+        CardSom(
+          name: 'Ai ki diliça',
+          url: 'ai-que-delicia.mp3',
+        ),
+        
       ],
     );
   }
