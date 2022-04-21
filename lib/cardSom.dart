@@ -4,11 +4,13 @@ import 'package:audioplayers/audioplayers.dart';
 class CardSom extends StatefulWidget {
   final String url;
   final String name;
+  final bool isAsset;
 
   const CardSom({
     Key? key,
     required this.name,
     required this.url,
+    required this.isAsset,
   }) : super(key: key);
 
   @override
@@ -46,14 +48,17 @@ class _CardSomState extends State<CardSom> {
 
   Future setAudio() async {
     audioPlayer.setReleaseMode(ReleaseMode.STOP);
-    // load from URL
-    // String url = 'https://www.applesaucekids.com/sound%20effects/moo.mp3';
-    // audioPlayer.setUrl(widget.url);
+    if (widget.isAsset) {
+      // load from asset
+      final player = AudioCache(prefix: 'assets/audio/');
+      final url = await player.load(widget.url);
+      audioPlayer.setUrl(url.path, isLocal: true);
 
-    // load from asset
-    final player = AudioCache(prefix: 'assets/audio/');
-    final url = await player.load(widget.url);
-    audioPlayer.setUrl(url.path, isLocal: true);
+    } else {
+      // load from URL
+      audioPlayer.setUrl(widget.url);
+    }
+
   }
 
   @override
@@ -89,19 +94,6 @@ class _CardSomState extends State<CardSom> {
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
           ),
-          // Slider(
-          //   min: 0,
-          //   max: duration.inSeconds.toDouble(),
-          //   value: position.inSeconds.toDouble(),
-          //   onChanged: (value) async {
-          //     final position = Duration(seconds: value.toInt());
-          //
-          //     await audioPlayer.seek(position);
-          //
-          //     await audioPlayer.resume();
-          //   },
-          // ),
-          //
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(

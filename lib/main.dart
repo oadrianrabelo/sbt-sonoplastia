@@ -78,14 +78,7 @@ class _SbtSonoplastiaState extends State<SbtSonoplastia> {
               CardSom(
                 url: 'ui-rodrigo-faro.mp3',
                 name: 'UUUUUUUUI!',
-              ),
-              CardSom(
-                url: 'moo.mp3',
-                name: 'MOO',
-              ),
-              CardSom(
-                url: 'eminem.mp3',
-                name: 'eminem',
+                isAsset: true,
               ),
             ],
           ),
