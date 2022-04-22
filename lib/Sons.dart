@@ -54,6 +54,18 @@ class Sons extends StatelessWidget {
             name: 'AHUURR AH BHRUAH',
         ),
         CardSom(
+            url: 'ai.mp3',
+            name: 'AI AI AI',
+        ),
+        CardSom(
+            url: 'ele-gosta.mp3',
+            name: 'Ele gosta',
+        ),
+        CardSom(
+            url: 'que-isso.mp3',
+            name: 'Que isso meu filho calma',
+        ),
+        CardSom(
             url: 'pressao.mp3',
             name: 'Sente a pressão',
         ),
