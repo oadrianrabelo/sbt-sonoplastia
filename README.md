@@ -26,6 +26,7 @@ git clone git@github.com:Adrian-Rabelo/sbt-sonoplastia.git
     
   > Não foram usados **exatamente** esses áudios na implementação do projeto, os links são apenas uma referência
 
+  :heavy_check_mark: [AI AI AI](https://youtu.be/-70gvWNOQvc)
   :heavy_check_mark: [Ai que diliça](https://youtu.be/jSsSM8a4afk)
   :heavy_check_mark: [Ao potência](https://youtu.be/P5MphlfhOOA)
   :heavy_check_mark: [Atumalaca](https://youtu.be/ZoAFngyIuZY)
@@ -36,10 +37,12 @@ git clone git@github.com:Adrian-Rabelo/sbt-sonoplastia.git
   :heavy_check_mark: [Oi meu chapa](https://youtu.be/Kqud3JLs3iQ)
   :heavy_check_mark: [Risada Chaves](https://youtu.be/IaB_4sID7T0)
   :heavy_check_mark: [Dança Gatinho, Dança](https://youtu.be/OutIegT8HBg)
+  :heavy_check_mark: [Ele gosta](https://youtu.be/-70gvWNOQvc)
   :heavy_check_mark: [Errou](https://youtu.be/2ZKBeHLEGtQ)
   ~~:heavy_check_mark: [Gemidão](https://youtu.be/52JwcwIAcUk)~~
   :heavy_check_mark: [Head Shake](https://youtu.be/j3msmiYewug)
   :heavy_check_mark: [IIIRRÁÁÁ](https://youtu.be/uaKKjT_d0jI)
+  :heavy_check_mark: [Que isso meu filho calma](https://youtu.be/ou3BlCaj1DM)
   :heavy_check_mark: [Jeeesus](https://youtu.be/TT-NZ4qmbcU)
   :heavy_check_mark: [Jukes](https://youtu.be/wtWftB-5Y3g)
   :heavy_check_mark: [Metal Gear](https://youtu.be/29ayN0ExAFw)
